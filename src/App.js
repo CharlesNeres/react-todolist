@@ -4,17 +4,17 @@ import { MdDeleteOutline } from "react-icons/md";
 import { CiCircleCheck } from "react-icons/ci";
 function App() {
   return (
-    <div>
+    <div className="App">
       <header>
         <h1>todo app</h1>
       </header>
       <main>
-        <div>
-          <div>
+        <div className="task">
+          <div className="task-description">
             <p>TODO TITLE</p>
             <span>todo sub title</span>
           </div>
-          <div>
+          <div className="task-actions">
             <span title="Edit">
               <MdEdit />
             </span>

@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Tomorrow:wght@200;400&display=swap");
+
+.App {
+  width: 70%;
+  height: 80%;
+  background-color: #d6efe1;
+  box-shadow: 2px 2px 5px #93b3a1;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+}
+
+.App h1 {
+  background-color: #82b969;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 130%;
+  color: white;
+  flex: 0 0 100px;
+  padding: 1em;
+}
+
+.App main {
+  padding: 10px 0;
+  flex: 1;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  gap: 10px;
+}
+
+main .task {
+  width: 95%;
+  background-color: white;
+  padding: 1em;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .task-description p {
+  color: #6d9e57;
+  text-transform: uppercase;
+}
+
+main .task-description span {
+  text-transform: uppercase;
+  font-size: 70%;
+}
+
+main .task-actions span {
+  padding: 0 0.3em;
+  color: #6d9e57;
+  cursor: pointer;
+}
+
+.App footer {
+  text-align: right;
+  flex: 0 0 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.App footer button {
+  background-color: #82b969;
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: none;
+  margin: 1em;
+  cursor: pointer;
+}
+
+.App footer button:hover {
+  background-color: #6d9e57;
+}
