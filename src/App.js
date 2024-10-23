@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { MdEdit } from "react-icons/md";
+import { MdDeleteOutline } from "react-icons/md";
+import { CiCircleCheck } from "react-icons/ci";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <h1>todo app</h1>
       </header>
+      <main>
+        <div>
+          <div>
+            <p>TODO TITLE</p>
+            <span>todo sub title</span>
+          </div>
+          <div>
+            <span title="Edit">
+              <MdEdit />
+            </span>
+            <span title="Delete">
+              <MdDeleteOutline />
+            </span>
+            <span title="Complete">
+              <CiCircleCheck />
+            </span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <button>+</button>
+      </footer>
     </div>
   );
 }
