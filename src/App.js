@@ -1,35 +1,15 @@
 import "./App.css";
-import { MdEdit } from "react-icons/md";
-import { MdDeleteOutline } from "react-icons/md";
-import { CiCircleCheck } from "react-icons/ci";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Task from "./components/Task";
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>todo app</h1>
-      </header>
+      <Header />
       <main>
-        <div className="task">
-          <div className="task-description">
-            <p>TODO TITLE</p>
-            <span>todo sub title</span>
-          </div>
-          <div className="task-actions">
-            <span title="Edit">
-              <MdEdit />
-            </span>
-            <span title="Delete">
-              <MdDeleteOutline />
-            </span>
-            <span title="Complete">
-              <CiCircleCheck />
-            </span>
-          </div>
-        </div>
+        <Task />
       </main>
-      <footer>
-        <button>+</button>
-      </footer>
+      <Footer />
     </div>
   );
 }
