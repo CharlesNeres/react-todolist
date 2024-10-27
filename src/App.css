@@ -18,14 +18,26 @@
   flex-direction: column;
 }
 
-.App h1 {
+.App header {
   background-color: #82b969;
+  text-align: center;
+  position: relative;
+}
+
+.App h1 {
   text-transform: uppercase;
   text-align: center;
   font-size: 130%;
   color: white;
   flex: 0 0 100px;
-  padding: 1em;
+  display: inline-block;
+}
+
+.App .home {
+  position: absolute;
+  left: 1em;
+  top: 5px;
+  color: white;
 }
 
 .App main {
@@ -74,7 +86,7 @@ main .task-actions span {
   flex-direction: row-reverse;
 }
 
-.App footer button {
+.App footer .btn {
   background-color: #82b969;
   color: white;
   width: 2.5rem;
@@ -87,8 +99,12 @@ main .task-actions span {
   border: none;
   margin: 1em;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
-.App footer button:hover {
-  background-color: #6d9e57;
+.App footer .btn:hover {
+  background-color: #547943;
 }
