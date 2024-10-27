@@ -14,16 +14,20 @@ function AddTask() {
       return;
     }
 
-    const newData = { title, detail };
+    const newData = {
+      id: Date.now(), // Garante um ID único
+      title,
+      detail,
+      completed: false,
+    };
+
     const updatedData = [...data, newData];
 
     setData(updatedData);
-
     localStorage.setItem("data", JSON.stringify(updatedData));
 
     setTitle("");
     setDetail("");
-
     alert("Task added successfully!");
   }
 
@@ -43,7 +47,7 @@ function AddTask() {
           onChange={(e) => setDetail(e.target.value)}
           placeholder="Detail"
         />
-        <button>Add</button>
+        <button type="submit">Add</button>
       </form>
     </div>
   );

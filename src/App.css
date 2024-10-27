@@ -49,6 +49,12 @@
   gap: 10px;
 }
 
+.completed {
+  text-decoration: line-through;
+  text-decoration-color: #547943;
+  -moz-text-decoration-color: #547943;
+}
+
 main .task {
   width: 95%;
   background-color: white;

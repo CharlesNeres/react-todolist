@@ -11,10 +11,26 @@ function Task() {
     if (savedData) setData(savedData);
   }, []);
 
+  function completeTask(id) {
+    const newData = data.map((task) => {
+      if (task.id === id) {
+        return { ...task, completed: !task.completed };
+      }
+
+      return task;
+    });
+
+    setData(newData);
+    localStorage.setItem("data", JSON.stringify(newData));
+  }
+
   return (
     <>
-      {data.map((task, index) => (
-        <div className="task" key={index}>
+      {data.map((task) => (
+        <div
+          className={`task ${task.completed ? "completed" : ""}`}
+          key={task.id}
+        >
           <div className="task-description">
             <p>{task.title}</p>
             <span>{task.detail}</span>
@@ -26,7 +42,7 @@ function Task() {
             <span title="Delete">
               <MdDeleteOutline />
             </span>
-            <span title="Complete">
+            <span title="Complete" onClick={() => completeTask(task.id)}>
               <CiCircleCheck />
             </span>
           </div>
