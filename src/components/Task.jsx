@@ -2,13 +2,21 @@ import { MdEdit } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
 import { CiCircleCheck } from "react-icons/ci";
 import { useEffect, useState } from "react";
+import { json } from "react-router-dom";
 
 function Task() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const savedData = JSON.parse(localStorage.getItem("data")) || [];
-    if (savedData) setData(savedData);
+    try {
+      const storedData = localStorage.getItem("data");
+      const parsedData = storedData ? JSON.parse(storedData) : null;
+      if (Array.isArray(parsedData)) {
+        setData(parsedData);
+      }
+    } catch (error) {
+      console.error("error parseing JSON from localStorage", error);
+    }
   }, []);
 
   function completeTask(id) {
