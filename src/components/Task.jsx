@@ -2,7 +2,7 @@ import { MdEdit } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
 import { CiCircleCheck } from "react-icons/ci";
 import { useEffect, useState } from "react";
-import { json } from "react-router-dom";
+import { json, Link } from "react-router-dom";
 
 function Task() {
   const [data, setData] = useState([]);
@@ -18,6 +18,12 @@ function Task() {
       console.error("error parseing JSON from localStorage", error);
     }
   }, []);
+
+  function onDeleteTaskClick(id) {
+    const newData = data.filter((task) => task.id !== id);
+    setData(newData);
+    localStorage.setItem("data", JSON.stringify(newData));
+  }
 
   function completeTask(id) {
     const newData = data.map((task) => {
@@ -44,13 +50,20 @@ function Task() {
             <span>{task.detail}</span>
           </div>
           <div className="task-actions">
-            <span title="Edit">
-              <MdEdit />
-            </span>
+            <Link title="Edit" to={`edit-task/${task.id}`}>
+              <MdEdit className="action" />
+            </Link>
             <span title="Delete">
-              <MdDeleteOutline />
+              <MdDeleteOutline
+                className="action"
+                onClick={() => onDeleteTaskClick(task.id)}
+              />
             </span>
-            <span title="Complete" onClick={() => completeTask(task.id)}>
+            <span
+              title="Complete"
+              className="action"
+              onClick={() => completeTask(task.id)}
+            >
               <CiCircleCheck />
             </span>
           </div>

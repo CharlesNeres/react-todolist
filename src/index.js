@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import AddTask from "./components/AddTask";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import EditTask from "./components/EditTask";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "add-task/",
     element: <AddTask />,
+  },
+  {
+    path: "edit-task/:id",
+    element: <EditTask />,
   },
 ]);
 

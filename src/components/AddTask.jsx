@@ -2,7 +2,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import "./AddTask.css";
 import Header from "./Header";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function AddTask() {
   const navigate = useNavigate();
